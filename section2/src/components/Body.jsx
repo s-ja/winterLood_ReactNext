@@ -10,6 +10,7 @@ export default function Body() {
     c: 3,
   };
 
+  
   return (
     <div className="body">
       <h1>body</h1>

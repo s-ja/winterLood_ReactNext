@@ -1,24 +1,19 @@
 import "./Body.css";
-import Button from "./Button";
+import { useState } from "react";
 
 export default function Body() {
-  const buttonProps = {
-    text: "1st button",
-    color: "red",
-    a: 1,
-    b: 2,
-    c: 3,
-  };
-
-  
+  const [light, setLight] = useState("OFF");
+  console.log(light);
   return (
     <div className="body">
-      <h1>body</h1>
-      <Button {...buttonProps} />
-      <Button text={"2nd"} color={"green"}>
-        <div>Btn</div>
-      </Button>
-      <Button text={"3rd"} color={"blue"} />
+      {light}
+      <button
+        onClick={() => {
+          setLight("ON");
+        }}
+      >
+        turn on light
+      </button>
     </div>
   );
 }

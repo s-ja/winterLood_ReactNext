@@ -14,6 +14,13 @@ export default function Body() {
       >
         turn on light
       </button>
+      <button
+        onClick={() => {
+          setLight("OFF");
+        }}
+      >
+        turn off light
+      </button>
     </div>
   );
 }

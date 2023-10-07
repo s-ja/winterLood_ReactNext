@@ -2,9 +2,6 @@ import "./Body.css";
 import { useState } from "react";
 
 export default function Body() {
-  // const [name, setName] = useState("");
-  // const [gender, setGender] = useState("");
-  // const [bio, setBio] = useState("");
   const [state, setState] = useState({
     name: "",
     gender: "",

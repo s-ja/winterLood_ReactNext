@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  /* margin: 0; */
+}
+
+body {
+  background-color: darkslategray;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkred;
+  padding: 20px;
+}
+
+.App {
+  margin: 0 auto;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.App > section {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+}

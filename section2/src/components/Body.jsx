@@ -17,7 +17,7 @@ export default function Body() {
 
   const onSubmit = () => {
     if (state.name === "") {
-      alert("please write name");
+      alert("please write name")
       nameRef.current.focus();
       return;
     } else {

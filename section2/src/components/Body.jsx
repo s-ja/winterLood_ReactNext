@@ -11,27 +11,6 @@ export default function Body() {
     bio: "",
   });
 
-  // const onChangeName = (e) => {
-  //   setState({
-  //     ...state,
-  //     name: e.target.value,
-  //   });
-  // };
-
-  // const onChangeGender = (e) => {
-  //   setState({
-  //     ...state,
-  //     gender: e.target.value,
-  //   });
-  // };
-
-  // const onChangeBio = (e) => {
-  //   setState({
-  //     ...state,
-  //     bio: e.target.value,
-  //   });
-  // };
-
   const onChange = (e) => {
     setState({
       ...state,

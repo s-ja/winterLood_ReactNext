@@ -1,5 +1,5 @@
 import "./Body.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Body() {
   const [state, setState] = useState({
@@ -15,12 +15,30 @@ export default function Body() {
     });
   };
 
+  const onSubmit = () => {
+    if (state.name === "") {
+      alert("please write name");
+      nameRef.current.focus();
+      return;
+    } else {
+      alert(`${state.name} is registered`);
+    }
+  };
+
+  const nameRef = useRef();
+
   return (
     <div className="body">
       <div>
-        <input type="text" value={state.name} onChange={onChange} name="name" />
+        <input
+          type="text"
+          value={state.name}
+          onChange={onChange}
+          name="name"
+          ref={nameRef}
+        />
         <div>current value : {state.name}</div>
-        <div>{state.name.length}</div>
+        <div>current length : {state.name.length}</div>
       </div>
       <div>
         <select name="gender" id="" value={state.gender} onChange={onChange}>
@@ -39,6 +57,9 @@ export default function Body() {
           onChange={onChange}
           value={state.bio}
         ></textarea>
+      </div>
+      <div>
+        <button onClick={onSubmit}>register</button>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
-export default function Viewer() {
+export default function Viewer({ count }) {
   return (
     <div>
       <div>current count : </div>
-      <h1>0</h1>
+      <h1>{count}</h1>
     </div>
   );
 }

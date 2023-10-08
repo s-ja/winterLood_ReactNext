@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Viewer from "./components/Viewer";
 import Controller from "./components/Controller";
+import Even from "./components/Even";
 
 function App() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
 
-  useEffect(() => {
-    // console.log(`count : ${count}, text : ${text}`);
-    console.log(`count : ${count}`);
-  }, [count]);
+  const isMountRef = useRef(false);
 
   useEffect(() => {
-    console.log(`text : ${text}`);
-  }, [text]);
+    if (!isMountRef.current) {
+      isMountRef.current = true;
+      return;
+    }
+    console.log("update");
+  });
+
+  useEffect(() => {
+    console.log("mount");
+  }, []);
 
   const onClickButton = (value) => {
     setCount(count + value);
-    // console.log(`text : ${text}`);
   };
 
   const onChangeText = (e) => {
@@ -33,6 +38,7 @@ function App() {
       </section>
       <section>
         <Viewer count={count} />
+        {count % 2 === 0 && <Even />}
       </section>
       <section>
         <Controller onClickButton={onClickButton} />

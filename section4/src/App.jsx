@@ -8,11 +8,17 @@ function App() {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    console.log(`count : ${count}, text : ${text}`);
-  }, [count, text]);
+    // console.log(`count : ${count}, text : ${text}`);
+    console.log(`count : ${count}`);
+  }, [count]);
+
+  useEffect(() => {
+    console.log(`text : ${text}`);
+  }, [text]);
 
   const onClickButton = (value) => {
     setCount(count + value);
+    // console.log(`text : ${text}`);
   };
 
   const onChangeText = (e) => {

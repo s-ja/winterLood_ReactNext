@@ -1,7 +1,7 @@
 export default function Viewer({ count }) {
   return (
     <div>
-      <div>current count : </div>
+      <span>current count : </span>
       <h1>{count}</h1>
     </div>
   );

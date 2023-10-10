@@ -1,4 +1,9 @@
+import useUpdate from "../hooks/useUpdate";
+
 export default function Controller({ onClickButton }) {
+  useUpdate(() => {
+    console.log("Controller component updated");
+  });
   return (
     <div>
       <button

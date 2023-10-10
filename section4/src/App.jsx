@@ -4,10 +4,11 @@ import Viewer from "./components/Viewer";
 import Controller from "./components/Controller";
 import Even from "./components/Even";
 import useUpdate from "./hooks/useUpdate";
+import useInput from "./hooks/useInput";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [text, setText] = useState("");
+  const [text, onChangeText] = useInput();
 
   useUpdate(() => {
     console.log("App component updated");
@@ -19,10 +20,6 @@ function App() {
 
   const onClickButton = (value) => {
     setCount(count + value);
-  };
-
-  const onChangeText = (e) => {
-    setText(e.target.value);
   };
 
   return (

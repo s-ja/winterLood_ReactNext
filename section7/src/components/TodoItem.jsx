@@ -1,11 +1,11 @@
 import "./TodoItem.css";
 
-export default function TodoItem() {
+export default function TodoItem({ id, isDone, createdDate, content }) {
   return (
     <li className="TodoItem">
-      <input type="checkbox" />
-      <div className="content">todo</div>
-      <div className="date">date</div>
+      <input type="checkbox" checked={isDone} />
+      <div className="content">{content}</div>
+      <div className="date">{new Date(createdDate).toLocaleDateString()}</div>
       <button>delete</button>
     </li>
   );

@@ -35,7 +35,7 @@ function App() {
       id: idRef.current++,
       isDone: false,
       content,
-      createDate: new Date().getTime(),
+      createdDate: new Date().getTime(),
     };
 
     setTodos([newTodo, ...todos]);

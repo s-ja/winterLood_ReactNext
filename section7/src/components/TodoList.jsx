@@ -7,9 +7,9 @@ export default function TodoList({ todos }) {
       <h4>todos</h4>
       <input type="text" placeholder="search works to do" />
       <ul className="todos_wrapper">
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        {todos.map((todo) => (
+          <li>{todo.content}</li>
+        ))}
       </ul>
     </div>
   );

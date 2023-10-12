@@ -43,16 +43,9 @@ function App() {
 
   const onUpdate = (targetId) => {
     setTodos(
-      todos.map((todo) => {
-        if (todo.id === targetId) {
-          return {
-            ...todo,
-            isDone: !todo.isDone,
-          };
-        } else {
-          return todo;
-        }
-      })
+      todos.map((todo) =>
+        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+      )
     );
   };
 

@@ -6,17 +6,22 @@ export default function TodoItem({
   createdDate,
   content,
   onUpdate,
+  onDelete,
 }) {
   const onChangeCheckBox = () => {
     onUpdate(id);
   };
 
+  const onClickDeleteButton = () => {
+    onDelete(id);
+  };
+ 
   return (
     <li className="TodoItem">
       <input type="checkbox" checked={isDone} onChange={onChangeCheckBox} />
       <div className="content">{content}</div>
       <div className="date">{new Date(createdDate).toLocaleDateString()}</div>
-      <button>delete</button>
+      <button onClick={onClickDeleteButton}>delete</button>
     </li>
   );
 }

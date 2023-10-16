@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useReducer, useRef, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import TodoEditor from "./components/TodoEditor";
@@ -25,9 +25,10 @@ const mockData = [
   },
 ];
 
-function App() {
-  const [todos, setTodos] = useState(mockData);
+function reducer() {}
 
+function App() {
+  const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
   const onCreate = (content) => {
@@ -38,19 +39,23 @@ function App() {
       createdDate: new Date().getTime(),
     };
 
-    setTodos([newTodo, ...todos]);
+    dispatch({
+      type: "CREATE",
+      data: newTodo,
+    });
+    // setTodos([newTodo, ...todos]);
   };
 
   const onUpdate = (targetId) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
-      )
-    );
+    // setTodos(
+    //   todos.map((todo) =>
+    //     todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+    //   )
+    // );
   };
 
   const onDelete = (targetId) => {
-    setTodos(todos.filter((todo) => todo.id !== targetId));
+    // setTodos(todos.filter((todo) => todo.id !== targetId));
   };
 
   return (

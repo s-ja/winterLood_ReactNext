@@ -55,7 +55,6 @@ function App() {
         createdDate: new Date().getTime(),
       },
     });
-    // setTodos([newTodo, ...todos]);
   };
 
   const onUpdate = (targetId) => {
@@ -63,11 +62,6 @@ function App() {
       type: "UPDATE",
       data: targetId,
     });
-    // setTodos(
-    //   todos.map((todo) =>
-    //     todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
-    //   )
-    // );
   };
 
   const onDelete = (targetId) => {
@@ -75,7 +69,6 @@ function App() {
       type: "DELETE",
       data: targetId,
     });
-    // setTodos(todos.filter((todo) => todo.id !== targetId));
   };
 
   return (

@@ -57,22 +57,19 @@ function App() {
     });
   };
 
-  const onUpdate = useCallback(
-    (targetId) => {
-      dispatch({
-        type: "UPDATE",
-        data: targetId,
-      });
-    },
-    [todos]
-  );
+  const onUpdate = useCallback((targetId) => {
+    dispatch({
+      type: "UPDATE",
+      data: targetId,
+    });
+  }, []);
 
-  const onDelete = (targetId) => {
+  const onDelete = useCallback((targetId) => {
     dispatch({
       type: "DELETE",
       data: targetId,
     });
-  };
+  }, []);
 
   return (
     <div className="App">

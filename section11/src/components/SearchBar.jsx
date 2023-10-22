@@ -7,7 +7,7 @@ export default function SearchBar({ q }) {
   const nav = useNavigate();
 
   useEffect(() => {
-    setSearch(q);
+    setSearch(q || "");
   }, [q]);
 
   const onChangeSearch = (e) => {
